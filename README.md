@@ -13,15 +13,15 @@ This adapter allows you mocking, automatically, all your dependencies making eas
 
 Install with [Bower](http://bower.io)
 
-    bower install sinonjs-hydrajs-testing-helper-adapter
+    bower install sinonjs-hydrajs-testing-helper
 
 Install with [Component](http://component.io)
 
-    component install sinonjs-hydrajs-testing-helper-adapter
+    component install sinonjs-hydrajs-testing-helper
 
 Install with [NPM](http://npmjs.org)
 
-    npm install sinonjs-hydrajs-testing-helper-adapter
+    npm install sinonjs-hydrajs-testing-helper
 
 ### Use in browser
 

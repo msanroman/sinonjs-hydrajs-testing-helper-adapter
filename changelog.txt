@@ -1,2 +1,4 @@
+1.0.1
+	Improve stub of objects when they are constructors.
 1.0.0
     First revision

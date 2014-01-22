@@ -2,7 +2,7 @@
   "name": "sinonjs-hydrajs-testing-helper",
   "repo": "HydraJS/sinonjs-hydrajs-testing-helper",
   "description": "SinonJS adapter to use it with hydrajs-testing-helper.",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "scripts": ["versions/sinonjs-hydrajs-testing-helper.min.js"],
   "main": "versions/sinonjs-hydrajs-testing-helper.min.js"
 }

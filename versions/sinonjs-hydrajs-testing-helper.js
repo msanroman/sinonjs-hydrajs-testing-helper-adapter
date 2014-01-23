@@ -1,14 +1,5 @@
 (function () {
   'use strict';
-  Function.prototype.clone = function() {
-    var self = this,
-    sKey,
-    temp = function temporary() { return self.apply(this, arguments); };
-    for( sKey in this ) {
-      temp[sKey] = this[sKey];
-    }
-    return temp;
-  };
   function adapter(Hydra, sinon) {
     Hydra.testing.setMockLibrary(sinon, {
       getAllFunctionsStubbed: function (oObj) {
@@ -17,7 +8,7 @@
         oWhatever;
         if (typeof oObj === 'function') {
           if (oObj.prototype) {
-            oMock = oObj.clone();
+            oMock = sinon.stub();
             for(sKey in oObj.prototype){
               oWhatever = oObj.prototype[sKey];
               if (typeof oWhatever === 'function') {

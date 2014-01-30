@@ -9,6 +9,7 @@
         if (typeof oObj === 'function') {
           if (oObj.prototype) {
             oMock = sinon.stub();
+            oMock.prototype = {};
             for(sKey in oObj.prototype){
               oWhatever = oObj.prototype[sKey];
               if (typeof oWhatever === 'function') {

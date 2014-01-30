@@ -1,8 +1,8 @@
 {
 	"name": "sinonjs-hydrajs-testing-helper",
-	"repo": "HydraJS/sinonjs-hydrajs-testing-helper.git",
-	"description": "SinonJS adapter to use it with hydrajs-testing-helper.",
-	"version": "1.1.0",
+	"repo": "{{ repository_shorten }}",
+	"description": "{{ description }}",
+	"version": "{{ version }}",
 	"scripts": ["versions/sinonjs-hydrajs-testing-helper.min.js"],
 	"main": "versions/sinonjs-hydrajs-testing-helper.min.js"
 }

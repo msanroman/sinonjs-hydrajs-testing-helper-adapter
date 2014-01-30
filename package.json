@@ -1,7 +1,7 @@
 {
   "name": "sinonjs-hydrajs-testing-helper",
   "description": "SinonJS adapter to use it with hydrajs-testing-helper.",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "author": "Tomas Corral",
   "main": "./src/sinonjs-hydrajs-testing-helper.js",
   "keywords": [
@@ -56,6 +56,7 @@
     "sinon": "~1.7.3",
     "uglify-js": "2.4.6",
     "zlib": "1.0.5",
+    "swig": "~1.2.2",
     "hydrajs-testing-helper": "*"
   },
   "github": "https://github.com/HydraJS/sinonjs-hydrajs-testing-helper"

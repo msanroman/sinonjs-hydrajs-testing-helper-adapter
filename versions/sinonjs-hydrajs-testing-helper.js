@@ -6,6 +6,10 @@
         var sKey,
         oMock = {},
         oWhatever;
+        if(oObj.toString() === 'stub')
+        {
+          return oObj;
+        }
         if (typeof oObj === 'function') {
           if (oObj.prototype) {
             oMock = sinon.stub();
@@ -13,7 +17,12 @@
             for(sKey in oObj.prototype){
               oWhatever = oObj.prototype[sKey];
               if (typeof oWhatever === 'function') {
-                oMock.prototype[sKey] = sinon.stub();
+                if(oWhatever.toString() !== 'stub')
+                {
+                  oMock.prototype[sKey] = sinon.stub();
+                }else{
+                  oMock.prototype[sKey] = oWhatever;
+                }
               } else {
                 oMock.prototype[sKey] = oWhatever;
               }
@@ -26,7 +35,12 @@
         for (sKey in oObj) {
           oWhatever = oObj[sKey];
           if (typeof oWhatever === 'function') {
-            oMock[sKey] = sinon.stub();
+            if(oWhatever.toString() !== 'stub')
+            {
+              oMock[sKey] = sinon.stub();
+            }else{
+              oMock[sKey] = oWhatever;
+            }
           } else {
             oMock[sKey] = oWhatever;
           }

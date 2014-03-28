@@ -3,7 +3,7 @@
 SinonJS adapter to use it with hydrajs-testing-helper.
 This adapter allows you mocking, automatically, all your dependencies making easier the testing of your code.
 
-## Updated to version 1.1.2
+## Updated to version 1.1.3
 
 [![Build Status](https://travis-ci.org/HydraJS/sinonjs-hydrajs-testing-helper-adapter.png)](https://travis-ci.org/HydraJS/sinonjs-hydrajs-testing-helper-adapter)
 

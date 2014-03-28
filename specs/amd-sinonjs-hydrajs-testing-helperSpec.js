@@ -16,4 +16,55 @@ define(['sinonjs-hydrajs-testing-helper'], function (Hydra) {
       } );
     });
   });
+  describe('Hydra module extend', function () {
+    var sModuleId = 'base_module'
+    , flag = false
+    , sExtendedModuleId = 'extended_module'
+    , oModuleInstance
+    , fpBaseModuleCreator = function () {
+      return {
+        init: function () {
+          this.method1();
+        },
+        method1: function () {
+          alert('Launching method1');
+        },
+        prop1: 'prop1',
+        prop2: 'prop2'
+      };
+    }
+    , fpExtendedModule = function (oBus, oModule, oLogger, oApi, oBase) {
+      return {
+        init: function (){
+          oBase.init.call(this);
+        }
+      };
+    };
+    beforeEach( function () {
+      Hydra.setTestFramework( jasmine );
+      sinon.stub(window, 'alert');
+    });
+    afterEach( function () {
+      window.alert.restore();
+      Hydra.setTestFramework( null );
+    } );
+    it('should check that we can access to the stubbed base module', function (){
+      waitsFor(function () {
+        Hydra.module.register( sModuleId, fpBaseModuleCreator );
+        var oPromise = Hydra.module.extend( sModuleId, sExtendedModuleId, fpExtendedModule );
+        oPromise.then(function () {
+          flag = true;
+        });
+        return flag;
+      }, "Module extension to be completed", 1000);
+      runs(function () {
+        Hydra.module.test(sExtendedModuleId, function ( oModule ) {
+          oModuleInstance = oModule;
+        });
+        oModuleInstance.init();
+        expect( oModuleInstance.mocks.parent.init.callCount ).toEqual( 1 );
+        expect( oModuleInstance.mocks.parent.method1.callCount).toEqual( 0 );
+      });
+    });
+  });
 });

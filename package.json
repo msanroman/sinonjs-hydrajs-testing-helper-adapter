@@ -1,7 +1,7 @@
 {
   "name": "sinonjs-hydrajs-testing-helper",
   "description": "SinonJS adapter to use it with hydrajs-testing-helper.",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "author": "Tomas Corral",
   "main": "./src/sinonjs-hydrajs-testing-helper.js",
   "keywords": [

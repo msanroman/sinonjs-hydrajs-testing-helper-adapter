@@ -9,7 +9,7 @@ requirejs.config({
   baseUrl: '/base/src',
 
   paths: {
-    'hydra': '../node_modules/hydra.js/src/Hydra',
+    'hydra': '../node_modules/hydra.js/versions/hydra',
     'hydrajs-testing-helper': '../node_modules/hydrajs-testing-helper/src/hydrajs-testing-helper',
     'sinon': '../node_modules/sinon/pkg/sinon-1.7.3'
   },

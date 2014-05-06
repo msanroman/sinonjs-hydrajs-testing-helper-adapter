@@ -1,6 +1,6 @@
 (function () {
   'use strict';
-  var mockObjectMethods = function(oObj) {
+  var mockObjectProperties = function(oObj) {
     var mock = {},
       oWhatever;
     for(var sKey in oObj) {
@@ -24,13 +24,13 @@
         if (typeof oObj === 'function') {
           if (oObj.prototype) {
             oMock = sinon.stub();
-            oMock.prototype = mockObjectMethods(oObj.prototype);
+            oMock.prototype = mockObjectProperties(oObj.prototype);
           } else {
             return sinon.stub();
           }
           return oMock;
         }
-        oMock = mockObjectMethods(oObj); 
+        oMock = mockObjectProperties(oObj); 
         return oMock;
       }
     });
